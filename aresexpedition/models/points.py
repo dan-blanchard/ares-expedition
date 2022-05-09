@@ -1,7 +1,7 @@
 from abc import ABC
 from math import floor
 
-from card import ProjectCard
+from .card import ProjectCard
 
 
 class Points(ABC):

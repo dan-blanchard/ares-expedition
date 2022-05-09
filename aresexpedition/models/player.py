@@ -1,11 +1,12 @@
 from typing import Type, Optional
-from card import ProjectCard, CorporationCard, CardColor, BlueProjectCard
-from deck import Deck
-from enums import PlayerColor, Phase, PlayerAction, RoundStep
-from exceptions import GameException
-from game import Game
-from global_requirements import GlobalParameter
-from player_board import PlayerBoard
+
+from .card import ProjectCard, CorporationCard, CardColor, BlueProjectCard
+from .deck import Deck
+from .enums import PlayerColor, Phase, PlayerAction, RoundStep
+from .exceptions import GameException
+from .game import Game
+from .global_requirements import GlobalParameter
+from .player_board import PlayerBoard
 
 
 class Player:

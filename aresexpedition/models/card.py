@@ -1,11 +1,12 @@
+from abc import ABC, abstractmethod
 from typing import Optional
 
-from action import Action
-from card_requirements import CardRequirements, DefaultGreenCardRequirements, DefaultRedBlueCardRequirements
-from effect import Effect
-from enums import Tag, CardColor, Phase
-from player import Player
-from abc import ABC, abstractmethod
+from .action import Action
+from .card_requirements import CardRequirements, DefaultGreenCardRequirements, DefaultRedBlueCardRequirements
+from .effect import Effect
+from .enums import Tag, CardColor, Phase
+from .player import Player
+
 
 
 class Card(ABC):
@@ -48,13 +49,13 @@ class ProjectCard(Card, ABC):
         return self.requirements.meets_conditions(player)
 
 
-class GreenProjectCard(ProjectCard, ABC):
+class GreenProjectCard(ProjectCard):
     def __init__(self, name: str, cost: int, requirements: CardRequirements = DefaultGreenCardRequirements(),
                  points: int = 0, tags: list[Tag] = None, action: Action = None, effect: Effect = None):
         super().__init__(name, cost, CardColor.Green, requirements, points, tags, action, effect)
 
 
-class BlueProjectCard(ProjectCard, ABC):
+class BlueProjectCard(ProjectCard):
     def __init__(self, name: str, cost: int, requirements: CardRequirements = DefaultRedBlueCardRequirements(),
                  points: int = 0, tags: list[Tag] = None, action: Action = None, effect: Effect = None):
         super().__init__(name, cost, CardColor.Blue, requirements, points, tags, action, effect)
@@ -65,7 +66,7 @@ class BlueProjectCard(ProjectCard, ABC):
                (not self.action_played_this_round or player.is_eligible_for_bonus(Phase.Action))
 
 
-class RedProjectCard(ProjectCard, ABC):
+class RedProjectCard(ProjectCard):
     def __init__(self, name: str, cost: int, requirements: CardRequirements = DefaultRedBlueCardRequirements(),
                  points: int = 0, tags: list[Tag] = None, action: Action = None, effect: Effect = None):
         super().__init__(name, cost, CardColor.Red, requirements, points, tags, action, effect)

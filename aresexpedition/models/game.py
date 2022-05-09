@@ -1,12 +1,14 @@
-import project_cards
-import corporation_cards
-from enums import Phase, RoundStep
-from exceptions import GameException
-from game_state import GameState
-from global_requirements import *
+
 import random
-from deck import Deck, ProjectCard, CorporationCard
 from dataclasses import dataclass
+
+from . import project_cards
+from . import corporation_cards
+from .enums import Phase, RoundStep
+from .exceptions import GameException
+from .game_state import GameState
+from .global_requirements import *
+from .deck import Deck, ProjectCard, CorporationCard
 
 
 @dataclass

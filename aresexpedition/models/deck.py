@@ -1,7 +1,8 @@
 import random
 from typing import TypeVar, Generic
-from card import ProjectCard, CorporationCard
-from exceptions import GameException
+
+from .card import ProjectCard, CorporationCard
+from .exceptions import GameException
 
 T = TypeVar('T', ProjectCard, CorporationCard)
 

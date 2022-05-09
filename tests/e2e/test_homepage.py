@@ -1,5 +1,6 @@
 import pytest
 from flask.testing import FlaskClient
+
 from aresexpedition import create_app
 
 

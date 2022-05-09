@@ -1,4 +1,4 @@
-from game import Turn
+from .game import Turn
 
 
 class GameState:

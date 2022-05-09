@@ -1,5 +1,6 @@
 from abc import abstractmethod, ABC
-from player import Player
+
+from .player import Player
 
 
 class Action(ABC):

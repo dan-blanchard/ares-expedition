@@ -3,9 +3,10 @@ from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from enum import Enum
 from typing import Type, Optional
-from exceptions import GlobalRequirementException
-from game import Turn
-from player import Player
+
+from .exceptions import GlobalRequirementException
+from .game import Turn
+from .player import Player
 
 
 class GlobalParameterColor(Enum):
@@ -174,3 +175,7 @@ class GlobalRequirements:
     def parameter_complete(self, parameter_type: Type[GlobalParameter], turn: Turn):
         parameter = self._get_parameter(parameter_type)
         return parameter.is_complete(turn)
+
+    def current_value(self, parameter_type: Type[GlobalParameter]):
+        parameter = self._get_parameter(parameter_type)
+        return parameter.value
